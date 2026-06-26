@@ -1,0 +1,169 @@
+@import "tailwindcss";
+@import "./variables.css";
+
+/* ── Tailwind v4 Theme Configuration ────────────────────────────────────────── */
+@theme {
+  /* Colors */
+  --color-oceanic-noir: var(--color-oceanic-noir);
+  --color-nocturnal-expedition: var(--color-nocturnal-expedition);
+  --color-mystic-mint: var(--color-mystic-mint);
+  --color-arctic-powder: var(--color-arctic-powder);
+  --color-forsythia: var(--color-forsythia);
+  --color-deep-saffron: var(--color-deep-saffron);
+
+  /* Fonts */
+  --font-mono: var(--font-jetbrains-mono);
+  --font-sans: var(--font-inter);
+
+  /* Border Radii */
+  --radius-xs: var(--radius-xs);
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-2xl: var(--radius-2xl);
+  --radius-3xl: var(--radius-3xl);
+
+  /* Animation Timings */
+  --transition-duration-micro: var(--duration-micro);
+  --transition-duration-interactive: var(--duration-interactive);
+  --transition-duration-layout: var(--duration-layout);
+  --transition-duration-entrance: var(--duration-entrance);
+
+  /* Custom bento screen breakpoint */
+  --breakpoint-bento: 920px;
+}
+
+
+/* ── Base Document Styles ────────────────────────────────────────────────────── */
+html {
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  background-color: var(--color-oceanic-noir);
+  color: var(--color-arctic-powder);
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Typography Utility Classes ────────────────────────────────────────────── */
+/* Code Blocks, Countdown Timers, Category Tags & Technical Headers */
+.font-technical {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+/* Primary Page Headers (with clamp sizing to prevent overflow) */
+.heading-hero {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw + 1rem, 4.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.heading-section {
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw + 1rem, 2.75rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.text-body-premium {
+  font-family: var(--font-inter), sans-serif;
+  font-size: clamp(1rem, 0.25vw + 0.95rem, 1.125rem);
+  line-height: 1.6;
+  color: var(--color-mystic-mint);
+}
+
+/* ── Accessibility Foundations ─────────────────────────────────────────────── */
+/* Skip to Content Link (Hidden offscreen by default, displays on tab focus) */
+.skip-link {
+  position: absolute;
+  top: -9999px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-forsythia);
+  color: var(--color-oceanic-noir);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-weight: 700;
+  border-radius: var(--radius-lg);
+  z-index: var(--z-toast);
+  transition: top var(--duration-interactive) var(--ease-out);
+}
+
+.skip-link:focus {
+  top: var(--space-4);
+  outline: 3px solid var(--color-deep-saffron);
+  outline-offset: 2px;
+}
+
+/* Focus Visible Styling (Guarantees visible keyboard focus indicators) */
+*:focus-visible {
+  outline: 2px solid var(--color-forsythia);
+  outline-offset: 4px;
+}
+
+/* Respect user browser preferences regarding motion reduction */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Custom Micro-interactions & Effects ────────────────────────────────────── */
+.glass-panel {
+  background: rgba(17, 76, 90, 0.15); /* Nocturnal Expedition at low opacity */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(217, 232, 226, 0.1); /* Mystic Mint border glow */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: border-color var(--duration-interactive) var(--ease-out),
+              background-color var(--duration-interactive) var(--ease-out);
+}
+
+.glass-panel:hover {
+  border-color: rgba(217, 232, 226, 0.25);
+  background: rgba(17, 76, 90, 0.25);
+}
+
+/* Base button animations without external library dependency */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-3) var(--space-6);
+  background-color: var(--color-forsythia);
+  color: var(--color-oceanic-noir);
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-weight: 700;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-glow);
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform var(--duration-micro) var(--ease-out),
+              background-color var(--duration-micro) var(--ease-out),
+              box-shadow var(--duration-micro) var(--ease-out);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-deep-saffron);
+  box-shadow: var(--shadow-glow-orange);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}

@@ -1,0 +1,83 @@
+:root {
+  /* ── Core Color Palette ──────────────────────────────────────────────────────── */
+  /* Hex codes from colorPallet.pdf */
+  --color-oceanic-noir: #172B36;
+  --color-nocturnal-expedition: #114C5A;
+  --color-mystic-mint: #D9E8E2;
+  --color-arctic-powder: #F1F6F4;
+  --color-forsythia: #FFC801;
+  --color-deep-saffron: #FF9932;
+
+  /* HSL values for opacity modifiers and color utility blending */
+  --color-oceanic-noir-hsl: 201 40% 15%;
+  --color-nocturnal-expedition-hsl: 191 68% 21%;
+  --color-mystic-mint-hsl: 158 19% 88%;
+  --color-arctic-powder-hsl: 150 14% 96%;
+  --color-forsythia-hsl: 47 100% 50%;
+  --color-deep-saffron-hsl: 30 100% 60%;
+
+  /* Semantic UI Colors */
+  --background-primary: var(--color-oceanic-noir);
+  --background-secondary: var(--color-nocturnal-expedition);
+  --text-primary: var(--color-arctic-powder);
+  --text-secondary: var(--color-mystic-mint);
+  --accent-primary: var(--color-forsythia);
+  --accent-secondary: var(--color-deep-saffron);
+
+  /* ── Spacing Variables (4px Baseline Grid) ────────────────────────────────── */
+  --space-0-5: 0.125rem; /* 2px */
+  --space-1: 0.25rem;    /* 4px */
+  --space-1-5: 0.375rem; /* 6px */
+  --space-2: 0.5rem;     /* 8px */
+  --space-2-5: 0.625rem; /* 10px */
+  --space-3: 0.75rem;    /* 12px */
+  --space-4: 1rem;       /* 16px */
+  --space-5: 1.25rem;    /* 20px */
+  --space-6: 1.5rem;     /* 24px */
+  --space-8: 2rem;       /* 32px */
+  --space-10: 2.5rem;    /* 40px */
+  --space-12: 3rem;      /* 48px */
+  --space-16: 4rem;      /* 64px */
+  --space-20: 5rem;      /* 80px */
+  --space-24: 6rem;      /* 96px */
+
+  /* ── Border Radius ────────────────────────────────────────────────────────── */
+  --radius-xs: 0.125rem;  /* 2px */
+  --radius-sm: 0.25rem;   /* 4px */
+  --radius-md: 0.375rem;  /* 6px */
+  --radius-lg: 0.5rem;    /* 8px */
+  --radius-xl: 0.75rem;   /* 12px */
+  --radius-2xl: 1rem;     /* 16px */
+  --radius-3xl: 1.5rem;   /* 24px */
+  --radius-full: 9999px;
+
+  /* ── Shadows ──────────────────────────────────────────────────────────────── */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --shadow-glow: 0 0 20px -2px rgba(255, 200, 1, 0.15);
+  --shadow-glow-orange: 0 0 20px -2px rgba(255, 153, 50, 0.15);
+
+  /* ── Transition Curves ────────────────────────────────────────────────────── */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /* ── Timing Parameters (From rules.docx constraints) ──────────────────────── */
+  --duration-micro: 150ms;       /* Micro-interactions bottom range: 150ms */
+  --duration-interactive: 200ms; /* Micro-interactions top range: 200ms */
+  --duration-layout: 350ms;      /* Structural layout reflow range: 300ms-400ms */
+  --duration-entrance: 500ms;    /* Initial load orchestration limit: 500ms */
+
+  /* ── Z-Index Scale ────────────────────────────────────────────────────────── */
+  --z-below: -1;
+  --z-base: 0;
+  --z-above: 1;
+  --z-header: 100;
+  --z-dropdown: 200;
+  --z-modal: 500;
+  --z-toast: 1000;
+
+  /* ── Page Layout Widths ───────────────────────────────────────────────────── */
+  --container-max: 80rem; /* 1280px */
+}
